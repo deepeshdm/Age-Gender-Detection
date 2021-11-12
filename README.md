@@ -29,8 +29,6 @@ Dataset link : [click here](https://www.kaggle.com/nipunarora8/age-gender-and-et
 
 The problem of predicting age and gender given a face image is divided into 2 seperate problems wherein 2 different models have been trained for each problem. The first problem is predicting the gender of the person,which falls under 'binary classification',so a binary classifier model was trained for this task. The second problem is predicting the age of the person,this problem is treated as an 'regression' problem and a different model have been trained for this task.
 
-The model used 
-
 The Binary classifier gives an validation-accuracy of 90% , whereas the Regressor gives a MAE of less than 90. The models were saved as '.h5' files. You can find the trained models in the ['models'](https://github.com/deepeshdm/Age-Gender-Detection/tree/main/models) directory.
 
 
