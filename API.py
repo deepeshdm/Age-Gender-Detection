@@ -79,7 +79,7 @@ def get_gender_age(img_path, gender_model_path, age_model_path):
     predicted_age = age_model.predict(img)
     predicted_gender = gender_model.predict(img)
 
-    age = predicted_age[0][0]
+    age = round(predicted_age[0][0],2)
     gender = round(predicted_gender[0][0], 2)
 
     return [age, gender]
@@ -93,19 +93,19 @@ if __name__=="__main__":
 
     print(tensorflow.__version__)
 
-    age_model_path = r"C:\Users\dipesh\Desktop\Age-Gender Detection\models\Age_Prediction_model.h5"
-    gender_model_path = r"C:\Users\dipesh\Desktop\Age-Gender Detection\models\Gender_Prediction_model.h5"
-    img_path = r"C:\Users\dipesh\Desktop\women.jpg"
+    age_model_path = r"/content/Age_Prediction_model.h5"
+    gender_model_path = r"/content/Gender_Prediction_model.h5"
+    img_path = r"/content/men.jpg"
 
     prediction = get_gender_age(img_path,gender_model_path,age_model_path)
-    print("Model Prediction : ",prediction)
-
-    from tensorflow import keras
-
-    age_model_path = r"C:\Users\dipesh\Desktop\Age-Gender Detection\models\Age_Prediction_model.h5"
-    gender_model_path = r"C:\Users\dipesh\Desktop\Age-Gender Detection\models\Gender_Prediction_model.h5"
-
-    age_model = keras.models.load_model(age_model_path)
-    gender_model = keras.models.load_model(gender_model_path)
+    age = prediction[0]
+    gender = prediction[1]
+    
+    if gender < 0.5:
+        gender="Male"
+    else:
+        gender="Female"
+    
+    print("Predicted age is {} , and gender is {}".format(round(age,2),gender))
 
 
