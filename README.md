@@ -1,13 +1,11 @@
 # Age and Gender Detection using Deep Learning
 
-<div align="center"> 
-<Img src="/Imgs/faces2.png" width="65%"/>
-</div>
-
-
 ## Objective
 The main goal of this project is to build a deep learning based system which takes a user's face image and predicts their age and gender.The project follows the similar approach as any ML project,performing data-collection,feature-engineering,training and then deployment.Some of its use-cases include online document verification,facial recognition systems,social credential verification etc.
 
+<div align="center"> 
+<Img src="/Imgs/faces2.png" width="65%"/>
+</div>
 
 ## Project Workflow
 The project will follow the same approach as used in all ML project. We'll go through different stages of data collection,feature extraction,training and finally deployment of trained model.
