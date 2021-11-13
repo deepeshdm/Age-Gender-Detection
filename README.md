@@ -38,7 +38,11 @@ The Binary classifier gives an validation-accuracy of 90% , whereas the Regresso
 
 
 
-
+## Improvements
+This project was done just for the sake of learning end-to-end ML deployment,so far less focus was given on optimizing model performances.Further things which can be done for Improving this model :
+- Collect more images and train model on RGB images (currently during inference we convert input images to (48x48x1) grayscale )
+- Try more complex model architectures
+ 
 
 
 
