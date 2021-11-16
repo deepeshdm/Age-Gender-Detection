@@ -10,7 +10,7 @@ The main goal of this project is to build a deep learning based system which tak
 ## Project Workflow
 The project will follow the same approach as used in all ML project. We'll go through different stages of data collection,feature extraction,training and finally deployment of trained model.
 
-```python
+```
 Data Collection --> Feature Extraction --> Training --> Deployment
 ```
 
