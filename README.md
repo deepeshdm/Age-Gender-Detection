@@ -10,9 +10,10 @@ The main goal of this project is to build a deep learning based system which tak
 ## Project Workflow
 The project will follow the same approach as used in all ML project. We'll go through different stages of data collection,feature extraction,training and finally deployment of trained model.
 
-```
-Data Collection --> Feature Extraction --> Training --> Deployment
-```
+- Data Collection
+- Feature Extraction
+- Model training and evaluation
+- Deployment
 
 
 ## Data Collection
@@ -34,6 +35,42 @@ The Binary classifier gives an validation-accuracy of 90% , whereas the Regresso
 (See the entire model training notebook [here](https://github.com/deepeshdm/Age-Gender-Detection/blob/main/Colab%20Notebooks/Training_Age_Gender_Detection_model.ipynb))
 
 
+## To run (locally)
+1. Import this repository using git command
+```
+git clone https://github.com/deepeshdm/Age-Gender-Detection.git
+```
+2. Install all the required dependencies inside a virtual environment
+```
+pip install -r requirements.txt
+```
+3. Copy the below code snippet and pass the required variable values
+```python
+from API import get_gender_age
+
+# path to age prediction model
+age_model_path = r"/models/Age_Prediction_model.h5"
+
+# path to gender prediction model
+gender_model_path = r"/models/Gender_Prediction_model.h5"
+
+# path to your input image
+img_path = r"/content/men.jpg"
+
+prediction = get_gender_age(img_path, gender_model_path, age_model_path)
+age = prediction[0]
+gender = prediction[1]
+
+if gender < 0.5:
+    gender = "Male"
+else:
+    gender = "Female"
+
+print("Predicted age is {} , and gender is {}".format(round(age, 2), gender))
+```
+
+
+
 ## Web Interface & API
 coming soon !
 
@@ -41,7 +78,7 @@ coming soon !
 ## Improvements
 This project was done just for the sake of learning end-to-end ML deployment,so far less focus was given on optimizing model performances.Further things which can be done for Improving this model :
 - Collect more images and train model on RGB images (currently during inference we convert input images to (48x48x1) grayscale )
-- Try more complex model architectures
+- Try more complex model architectures with ensemble methods
  
 
 
